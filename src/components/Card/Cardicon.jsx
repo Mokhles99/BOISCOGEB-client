@@ -11,7 +11,7 @@ import { getCarttwo, updateCartWithUserInfo, removeItemFromCart, updateItemQuant
 import { styled } from '@mui/material/styles';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-
+import { useMediaQuery } from '@mui/material';
 const MySwal = withReactContent(Swal);
 
 function CartIcon() {
@@ -29,6 +29,7 @@ function CartIcon() {
     const carttwo = useSelector(state => state.carttwo.carttwo || { items: [] });
 
     const [itemQuantities, setItemQuantities] = useState({});
+    const isLargeScreen = useMediaQuery('(min-width:1280px)');
 
     useEffect(() => {
         const cartId = localStorage.getItem('cartId');
@@ -39,13 +40,31 @@ function CartIcon() {
         }
     }, [dispatch]);
 
+    // useEffect(() => {
+    //     if (carttwo && carttwo.items) {
+    //         const updatedQuantities = {};
+    //         carttwo.items.forEach(item => {
+    //             updatedQuantities[item._id] = item.quantity;
+    //         });
+    //         setItemQuantities(updatedQuantities);
+    //     }
+    // }, [carttwo.items]);
+
     useEffect(() => {
         if (carttwo && carttwo.items) {
             const updatedQuantities = {};
+            let quantitiesChanged = false;
+    
             carttwo.items.forEach(item => {
-                updatedQuantities[item._id] = item.quantity;
+                if (itemQuantities[item._id] !== item.quantity) {
+                    updatedQuantities[item._id] = item.quantity;
+                    quantitiesChanged = true;
+                }
             });
-            setItemQuantities(updatedQuantities);
+    
+            if (quantitiesChanged) {
+                setItemQuantities(updatedQuantities);
+            }
         }
     }, [carttwo.items]);
 
@@ -173,10 +192,17 @@ function CartIcon() {
 
     const modalStyle = {
         position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        width: '30%', bgcolor: '#f1f1f1', borderRadius: '30px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+        width: '35%', bgcolor: '#f1f1f1', borderRadius: '30px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
         p: 4, color: '#FFF', fontfamily: 'cursive', display: 'flex', flexDirection: 'column',
         alignItems: 'center', gap: 2, overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.2)'
     };
+
+    const modalStyleMobile={
+        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+        width: '95%', bgcolor: '#f1f1f1', borderRadius: '30px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+        p: 4, color: '#FFF', fontfamily: 'cursive', display: 'flex', flexDirection: 'column',
+        alignItems: 'center', gap: 2, overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.2)'
+    }
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -198,7 +224,7 @@ function CartIcon() {
                 </StyledBadge>
             </div>
             <Modal open={modalOpen} onClose={handleCloseModal} aria-labelledby="cart-modal-title" aria-describedby="cart-modal-description">
-                <Box sx={modalStyle}>
+            <Box sx={isLargeScreen ? modalStyle : modalStyleMobile}>
                     <Typography id="cart-modal-title" variant="h6" component="h2" className="goldenCursiveText" style={{ color: "grey" }}>
                         Panier
                     </Typography>

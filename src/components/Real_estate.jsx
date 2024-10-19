@@ -17,8 +17,16 @@ const Real_estate = () => {
 
   useEffect(() => {
     dispatch(getAllCarousels());
-  }, [dispatch]);
+    const timer = setTimeout(() => {
+      const produitsSection = document.getElementById("produits");
+      if (produitsSection) {
+        produitsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 10000); // 4000 millisecondes = 4 secondes
 
+    return () => clearTimeout(timer); // Nettoyage du timer lors du démontage
+  }, [dispatch]);
+  
   const images = useSelector((state) => state.carousel.carousels)
   
   const imagesTwo = [

@@ -4,8 +4,9 @@ import LatestPropertyWithPagination from './Latest_property_pagination';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import * as Images from '../../public/index';
 
 const productTypeMapping = {
   'Bois_Blanc': ['Arkhangesk','StoraEnso & Khumo','Ilim'],
@@ -33,15 +34,15 @@ const modalContent = {
       
         
       ],
-     suppliers: [
-      "/public/assets/four1boisblanc.png",
-      "/public/assets/ilim new.png",
-      "/public/assets/four3boisblanc.png",
-    ],
+      suppliers: [
+        Images.four1boisblanc,
+        Images.ilimNew,
+        Images.four3boisblanc,
+      ],
     supplierstwo: [
-      "/public/assets/boisblanc.jpg",
-      "/public/assets/boisblanc1.png",
-      "/public/assets/boisblanc3.png",
+      Images.boisblanc,
+      Images.boisblanc1,
+      Images.boisblanc3,
     ],
 
     
@@ -62,20 +63,21 @@ const modalContent = {
         { id: 6, text: 'MOELVEN' },
         { id: 6, text: 'RUDUIRKE' },
         
-      ], suppliers: [
-      "/public/assets/four1boisblanc.png",
-      "/public/assets/ilim new 1.png",
-      "/public/assets/four3boisblanc.png", 
-      "/public/assets/fournisseur2.jpg", 
-      "/public/assets/vida new.png", 
-      "/public/assets/molven.png",
-      "/public/assets/karlhedin 1.png"
-    ],
-    supplierstwo: [
-      "/public/assets/boisrouge1.png",
-      "/public/assets/boisrouge2.png",
-      "/public/assets/boisrouge3.png",
-    ],
+      ], 
+      suppliers: [
+        Images.four1boisblanc,
+        Images.ilimNew,
+        Images.four3boisblanc,
+        Images.fournisseur2,
+        Images.vidaNew,
+        Images.molven,
+        Images.karlhedin1
+      ],
+      supplierstwo: [
+        Images.boisrouge1,
+        Images.boisrouge2,
+        Images.boisrouge3,
+      ],
   },
   Bois_MDF: {
     backgroundColor: "#e6edeb",
@@ -88,16 +90,17 @@ const modalContent = {
         { id: 4, text: 'COUVRE CHANT' },
        
         
-      ], suppliers: [
-      "/assets/bakismdf.png",
-      "/assets/mdffournisseur.png",
+      ], 
+      suppliers: [
+      Images.bakismdf,
+      Images.mdffournisseur,
      
     ],
     
     supplierstwo: [
-      "/public/assets/mdf2.jpg",
-      "/public/assets/mdf.jpg",
-      "/public/assets/mdf3.png",
+      Images.mdf2,
+      Images.mdf,
+      Images.mdf3,
     ],
   },
   Bois_Dur: {
@@ -111,21 +114,22 @@ const modalContent = {
         { id: 4, text: 'CHENE' },
        
         
-      ], suppliers: [
-      "/assets/LogoSharedwood.png",
-      "/assets/LOGO-SITO.png",
-      "/assets/logodur.jpg",
-      "/assets/logodur2.jpg",
-      "/assets/logodur3.jpg",
+      ],
+       suppliers: [
+      Images.LogoSharedwood,
+      Images.LogoSito,
+      Images.logodur,
+      Images.logodur2,
+      Images.logodur3,
   
     ],
 
     supplierstwo: [
-      "/public/assets/boisdur.jpg",
-      // "/public/assets/proposbois3.jpg",
-      "/public/assets/boisdur2222.jpg",
-      // "/public/assets/modalboisdur.png",
-      "/public/assets/boisdur3333.jpg",
+      Images.boisdur,
+      
+      Images.boisdur2222,
+     
+      Images.boisdur3333
     ],
   },
 };
@@ -160,7 +164,7 @@ const Neighborhood_properties = ({ products }) => {
   const [modalData, setModalData] = useState({});
 
   useEffect(() => {
-    handleFilter('Tous'); // Sélectionne 'Tous' par défaut au chargement
+    // handleFilter('Tous'); // Sélectionne 'Tous' par défaut au chargement
   }, [products]);
 
   const handleFilter = (famille) => {
@@ -186,7 +190,7 @@ const Neighborhood_properties = ({ products }) => {
   };
 
   const getActiveClass = (famille) => {
-    return activeFamille === famille ? 'shadow-blue-500 shadow-lg cursor-pointer' : 'cursor-pointer';
+    return activeFamille === famille ? 'shadow-[#8B4513] shadow-lg cursor-pointer' : 'cursor-pointer';
   };
   const handleOpenModal = (famille) => {
     setModalData(modalContent[famille]);
@@ -326,7 +330,7 @@ const Neighborhood_properties = ({ products }) => {
         />
       </div>
 
-      <Modal open={openModal} onClose={handleCloseModal}>
+      {/* <Modal open={openModal} onClose={handleCloseModal}>
         <Box 
           sx={{
             // backgroundColor: modalData.backgroundColor,
@@ -370,7 +374,7 @@ const Neighborhood_properties = ({ products }) => {
 <Box
   mt={0.3}
   display="grid"
-  gridTemplateColumns="repeat(auto-fit, minmax(50px, 1fr))"  // Adjusted minmax values for smaller buttons
+  gridTemplateColumns="repeat(auto-fit, minmax(70px, 1fr))"  // Adjusted minmax values for smaller buttons
  
 >
   {modalData.buttons?.map((button) => (
@@ -430,7 +434,149 @@ const Neighborhood_properties = ({ products }) => {
 
 
         </Box>
-      </Modal>
+      </Modal> */}
+      <Modal open={openModal} onClose={handleCloseModal}>
+  <Box 
+    sx={{
+      backgroundColor: "white",
+      p: { xs: 2, sm: 3, md: 4 },
+      borderRadius: { xs: 2, sm: 3, md: 5 },
+      width: { xs: '90%', sm: '90%', md: '80%' },
+      maxWidth: '1200px',
+      mx: 'auto',
+      my: { xs: '2%', sm: '4%' },
+      maxHeight: '95vh',
+      overflowY: 'auto',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+      position: 'relative',
+    }}
+  >
+      <IconButton
+      aria-label="close"
+      onClick={handleCloseModal}
+      sx={{
+        position: 'absolute',
+        right: 8,
+        top: 8,
+        color: (theme) => theme.palette.grey[500],
+      }}
+    >
+      <CloseIcon />
+    </IconButton>
+    <Typography
+      variant="h6"
+      component="h2"
+      sx={{ 
+        fontWeight: 'bold',
+        fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
+        mb: 2,
+        pr: 4, 
+      }}
+    >
+      A Propos ce bois :
+    </Typography>
+    <Typography 
+      variant="body1" 
+      component="p"
+      sx={{
+        fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
+        mb: 3
+      }}
+    >
+      {modalData.description}
+    </Typography>
+    <Box
+      mt={2}
+      display="grid"
+      gridTemplateColumns={{
+        xs: 'repeat(2, 1fr)',
+        sm: 'repeat(3, 1fr)',
+        md: 'repeat(4, 1fr)'
+      }}
+      gap={1}
+    >
+      {modalData.buttons?.map((button) => (
+        <button
+          key={button.id}
+          style={{
+            padding: "8px",
+            border: "1px solid #ccc",
+            backgroundColor: "#9d7153",
+            color: "white",
+            cursor: "pointer",
+            textAlign: "center",
+            borderRadius: "16px",
+            fontSize: "0.8rem",
+            width: "100%",
+          }}
+        >
+          {button.text}
+        </button>
+      ))}
+    </Box>
+    <Box 
+      mt={3} 
+      mb={3} 
+      display="grid" 
+      gridTemplateColumns={{
+        xs: '1fr',
+        sm: 'repeat(2, 1fr)',
+        md: 'repeat(3, 1fr)'
+      }}
+      gap={2}
+    >
+      {modalData.supplierstwo?.map((suppliertwo, index) => (
+        <img
+          key={index}
+          src={suppliertwo}
+          alt={`Supplier ${index + 1}`}
+          style={{ 
+            width: "100%", 
+            height: "auto", 
+            maxHeight: "260px", 
+            objectFit: "contain",
+            borderRadius: "8px"
+          }} 
+        />
+      ))}
+    </Box>
+    <Typography
+      variant="h6"
+      component="h3"
+      sx={{ 
+        fontWeight: 'bold',
+        fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
+        mb: 2
+      }}
+    >
+      Nos Fournisseurs :
+    </Typography>
+    <Box 
+      display="grid" 
+      gridTemplateColumns={{
+        xs: 'repeat(3, 1fr)',
+        sm: 'repeat(4, 1fr)',
+        md: 'repeat(5, 1fr)'
+      }}
+      gap={2}
+    >
+      {modalData.suppliers?.map((supplier, index) => (
+        <img 
+          key={index} 
+          src={supplier} 
+          alt={`Supplier ${index + 1}`} 
+          style={{
+            width: "100%",
+            height: "auto",
+            maxHeight: "60px",
+            objectFit: "contain",
+            borderRadius: "5px"
+          }} 
+        />
+      ))}
+    </Box>
+  </Box>
+</Modal>
     </main>
   );
 };

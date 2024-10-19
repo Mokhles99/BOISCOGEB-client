@@ -1,0 +1,9 @@
+
+
+@media screen and (max-width: 425px) {
+    .customgrid-mobile{
+        grid-template-columns: 1fr 1fr !important;
+
+    }
+
+}

@@ -127,13 +127,20 @@ const Navbar = () => {
     }}
   >Témoignages</NavLink>
               </li>
+
+              <li className="py-2 flex font-medium items-center leading-snug ml-20">
+                <button className={`py-4 hoverBtn flex items-center gap-2 ${scrolling ? 'text-black' : 'text-[#001F75]'}`}>
+                  {/* <FaShoppingCart className="text-2xl" /> */}
+                  <CardIcon className="text-2xl"/>
+                </button>
+              </li>
               
             </ul>
           </div>
 
           <div
             className={
-              "lg:flex lg:items-center items-baseline lg:pt-0 pt-20 lg:h-auto h-screen lg:w-auto w-full justify-center" +
+              "lg:flex lg:items-center items-baseline lg:pt-0 pt-20 lg:h-auto h-[65vh] bg-white bg-opacity-80 lg:w-auto w-full justify-center" +
               (navbarOpen ? " flex" : " hidden")
             }
           >
@@ -206,14 +213,15 @@ const Navbar = () => {
     }}
   >Témoignages</NavLink>
                 </li>
-              </div>
-
-              <li className="py-2 flex font-medium items-center leading-snug">
+                <li className="py-2 flex font-medium items-center leading-snug">
                 <button className={`py-4 hoverBtn flex items-center gap-2 ${scrolling ? 'text-black' : 'text-[#001F75]'}`}>
                   {/* <FaShoppingCart className="text-2xl" /> */}
                   <CardIcon className="text-2xl"/>
                 </button>
               </li>
+              </div>
+
+              
             </ul>
           </div>
         </div>
