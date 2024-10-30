@@ -70,6 +70,7 @@ const Navbar = () => {
     
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("hero");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -82,6 +83,7 @@ const Navbar = () => {
     
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("propos");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -94,6 +96,7 @@ const Navbar = () => {
     
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("produits");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -108,6 +111,7 @@ const Navbar = () => {
     
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("service");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -120,6 +124,7 @@ const Navbar = () => {
     to="/"
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("temoi");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -156,6 +161,7 @@ const Navbar = () => {
     to="/"
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("hero");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -168,6 +174,7 @@ const Navbar = () => {
     to="/"
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("propos");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -180,6 +187,7 @@ const Navbar = () => {
     to="/"
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("produits");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -194,6 +202,7 @@ const Navbar = () => {
     to="/"
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("service");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -206,6 +215,7 @@ const Navbar = () => {
     to="/"
     onClick={(e) => {
       e.preventDefault();
+      setNavbarOpen(false)
       const section = document.getElementById("temoi");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
