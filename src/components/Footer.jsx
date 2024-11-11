@@ -5,6 +5,7 @@ import {
   FaFacebookF,
   FaRegEnvelope,
   FaLinkedinIn,
+  FaWhatsapp,
 } from "react-icons/fa";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
@@ -39,7 +40,17 @@ const Footer = () => {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+  const handleWhatsAppClick = () => {
+    window.location.href = 'https://wa.me/21698751725'; 
+  };
 
+  const handleFacebookClick = () => {
+    window.location.href = 'https://www.facebook.com/profile.php?id=100067771234549&mibextid=ZbWKwL';
+  };
+
+  const handleInstagramClick = () => {
+    window.location.href = 'https://www.instagram.com/cogeb_immobiliere?igsh=MW9ub3kzbmE1ZXRoNw==';
+  };
   return (
     <footer>
       <section className="flex flex-col bg-[#e6edeb] pt-8">
@@ -114,9 +125,9 @@ const Footer = () => {
                 Trouvez-Nous
               </p>
               <span className="text-[#664532] flex items-center gap-4 text-2xl lg:justify-normal justify-center">
-                <FaLinkedinIn className="cursor-pointer" />
-                <FaFacebookF className="cursor-pointer" />
-                <FaInstagram className="cursor-pointer" />
+              <FaWhatsapp className="cursor-pointer" onClick={handleWhatsAppClick} />
+                <FaFacebookF className="cursor-pointer" onClick={handleFacebookClick} />
+                <FaInstagram className="cursor-pointer" onClick={handleInstagramClick} />
               </span>
             </div>
           </div>

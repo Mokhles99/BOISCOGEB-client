@@ -116,8 +116,8 @@ const modalContent = {
         
       ],
        suppliers: [
-      Images.LogoSharedwood,
-      Images.LogoSito,
+      Images.logoSharedwood, 
+      Images.logoSito,
       Images.logodur,
       Images.logodur2,
       Images.logodur3,

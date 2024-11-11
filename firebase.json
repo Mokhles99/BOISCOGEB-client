@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "cogebbois-site",
+    "site": "cogeb-bois-website",
     "public": "dist",
     "ignore": [
       "firebase.json",

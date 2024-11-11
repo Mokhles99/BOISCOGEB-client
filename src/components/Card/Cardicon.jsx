@@ -156,30 +156,63 @@ function CartIcon() {
         dispatch(updateItemQuantity(cartId, itemId, newQuantity));
     };
     
-    const handleDecreaseQuantity = (itemId) => {
+    // const handleDecreaseQuantity = (itemId) => {
+    //     const cartId = localStorage.getItem('cartId');
+    //     if (itemQuantities[itemId] > 1) {
+    //         const newQuantity = itemQuantities[itemId] - 1;
+    //         setItemQuantities({ ...itemQuantities, [itemId]: newQuantity });
+    //         dispatch(updateItemQuantity(cartId, itemId, newQuantity));
+    //     } else {
+    //         const newItems = { ...itemQuantities };
+    //         delete newItems[itemId];
+    //         setItemQuantities(newItems);
+    //         dispatch(removeItemFromCart(carttwo._id, itemId));
+    //     }
+    // };
+
+    const handleDecreaseQuantity = async (itemId) => {
         const cartId = localStorage.getItem('cartId');
+    
         if (itemQuantities[itemId] > 1) {
             const newQuantity = itemQuantities[itemId] - 1;
             setItemQuantities({ ...itemQuantities, [itemId]: newQuantity });
-            dispatch(updateItemQuantity(cartId, itemId, newQuantity));
+            await dispatch(updateItemQuantity(cartId, itemId, newQuantity));
         } else {
             const newItems = { ...itemQuantities };
             delete newItems[itemId];
             setItemQuantities(newItems);
-            dispatch(removeItemFromCart(carttwo._id, itemId));
+            await dispatch(removeItemFromCart(carttwo._id, itemId));
         }
+    
+        // Fetch the updated cart after the operation
+        dispatch(getCarttwo(cartId));
     };
 
-    const handleRemoveItem = (itemId) => {
+    // const handleRemoveItem = (itemId) => {
+    //     const cartId = localStorage.getItem('cartId');
+    //     dispatch(removeItemFromCart(carttwo._id, itemId));
+    //     setItemQuantities(prevQuantities => {
+    //         const newQuantities = { ...prevQuantities };
+    //         delete newQuantities[itemId];
+    //         return newQuantities;
+    //     });
+    // };
+    const handleRemoveItem = async (itemId) => {
         const cartId = localStorage.getItem('cartId');
-        dispatch(removeItemFromCart(carttwo._id, itemId));
+        
+        // Remove the item from the cart
+        await dispatch(removeItemFromCart(carttwo._id, itemId));
+        
+        // Update local state
         setItemQuantities(prevQuantities => {
             const newQuantities = { ...prevQuantities };
             delete newQuantities[itemId];
             return newQuantities;
         });
+    
+        // Fetch the updated cart
+        dispatch(getCarttwo(cartId));
     };
-
     const handleManualQuantityChange = (itemId, value) => {
         const cartId = localStorage.getItem('cartId');
         const newQuantity = parseInt(value, 10);
@@ -191,18 +224,28 @@ function CartIcon() {
     };
 
     const modalStyle = {
-        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        width: '35%', bgcolor: '#f1f1f1', borderRadius: '30px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-        p: 4, color: '#FFF', fontfamily: 'cursive', display: 'flex', flexDirection: 'column',
-        alignItems: 'center', gap: 2, overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.2)'
+        position: 'absolute', 
+        top: '50%', 
+        left: '50%', 
+        transform: 'translate(-50%, -50%)',
+        width: '40%', // Par défaut, 30% de la largeur
+        bgcolor: '#f1f1f1', 
+        borderRadius: '30px', 
+        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+        p: 4, 
+        color: '#FFF', 
+        fontFamily: 'cursive', 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        gap: 2, 
+        overflow: 'hidden', 
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        '@media (max-width: 768px)': {
+            width: '95%', // 50% de la largeur pour les appareils de 1024px ou moins
+        }
     };
 
-    const modalStyleMobile={
-        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        width: '95%', bgcolor: '#f1f1f1', borderRadius: '30px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-        p: 4, color: '#FFF', fontfamily: 'cursive', display: 'flex', flexDirection: 'column',
-        alignItems: 'center', gap: 2, overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.2)'
-    }
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -224,7 +267,7 @@ function CartIcon() {
                 </StyledBadge>
             </div>
             <Modal open={modalOpen} onClose={handleCloseModal} aria-labelledby="cart-modal-title" aria-describedby="cart-modal-description">
-            <Box sx={isLargeScreen ? modalStyle : modalStyleMobile}>
+            <Box sx={modalStyle}>
                     <Typography id="cart-modal-title" variant="h6" component="h2" className="goldenCursiveText" style={{ color: "grey" }}>
                         Panier
                     </Typography>
@@ -255,10 +298,41 @@ function CartIcon() {
                                     }
                                 />
 
-
+{/* 
                                     <IconButton onClick={() => handleIncreaseQuantity(item._id)}><ControlPointIcon sx={{ color: '#11A592' }}/></IconButton>
                                     <IconButton onClick={() => handleDecreaseQuantity(item._id)}><DoDisturbOnOutlinedIcon sx={{ color: '#ce9d29' }}/></IconButton>
-                                    <IconButton onClick={() => handleRemoveItem(item._id)}><HighlightOffIcon sx={{ color: 'red' }}/></IconButton>
+                                    <IconButton onClick={() => handleRemoveItem(item._id)}><HighlightOffIcon sx={{ color: 'red' }}/></IconButton> */}
+
+<IconButton 
+    onClick={() => handleIncreaseQuantity(item._id)} 
+    sx={{ 
+        color: '#11A592', 
+        padding: '4px', // Réduit le padding
+        fontSize: '16px', // Diminue la taille de l'icône
+    }}
+>
+    <ControlPointIcon sx={{ fontSize: '16px' }} />
+</IconButton>
+<IconButton 
+    onClick={() => handleDecreaseQuantity(item._id)} 
+    sx={{ 
+        color: '#ce9d29', 
+        padding: '4px', 
+        fontSize: '16px', 
+    }}
+>
+    <DoDisturbOnOutlinedIcon sx={{ fontSize: '16px' }} />
+</IconButton>
+<IconButton 
+    onClick={() => handleRemoveItem(item._id)} 
+    sx={{ 
+        color: 'red', 
+        padding: '4px', 
+        fontSize: '16px', 
+    }}
+>
+    <HighlightOffIcon sx={{ fontSize: '16px' }} />
+</IconButton>
                                 </ListItem>
                             );
                         })}
@@ -330,6 +404,7 @@ function CartIcon() {
 </List>
 
                     <Box sx={{ width: '90%', borderBottom: '1px solid gray'}} /> 
+                    <List sx={{ width: '100%', maxHeight: 500, overflow: 'auto', color: 'black' }}>
                     <Typography id="cart-modal-title" variant="h6" component="h2" sx={{ color: 'gray' }}>
                         Informations utilisateur
                     </Typography>
@@ -395,6 +470,7 @@ function CartIcon() {
                         '&:hover': { backgroundColor: '#ce9d29', color: '#fbfbfb' }
                      }}
                      > Envoyer <SendIcon sx={{ ml:1}}/> </Button>
+                     </List>
                 </Box>
             </Modal>
         </>
