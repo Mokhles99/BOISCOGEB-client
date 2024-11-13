@@ -29,7 +29,7 @@ const modalContent = {
     
       buttons: [
         { id: 1, text: 'ARKHAN GESLK' },
-        { id: 2, text: 'STORA ENZO' },
+        { id: 2, text: 'STORA ENSO' },
         { id: 3, text: 'ILIM' },
       
         
@@ -54,14 +54,14 @@ const modalContent = {
       "Le bois Rouge est un bois tendre provenant principalement de Suède, Finlande, Russie et de ses forêts riches (côtières). Bois commercialisé dans le domaine de la charpente et du bardage. Grâce à cette essence, Cogeb est fière de vous offrir une qualité bien connue en Tunisie.Pour cela, Cogeb veille à mettre à votre disposition un stock toujours bien portant de bois rouge afin de répondre à tous vos besoins d'aménagement avec des fournisseurs de renommée mondiale.",
       buttons: [
         { id: 1, text: 'FORTUNA' },
-        { id: 2, text: 'STORA ENZO' },
+        { id: 2, text: 'STORA ENSO' },
         { id: 3, text: 'KUHMO' },
         { id: 4, text: 'TAIGA' },
         { id: 5, text: 'ARKHAN GESLK' },
         { id: 6, text: 'VIDA' },
         { id: 6, text: 'SATERS' },
         { id: 6, text: 'MOELVEN' },
-        { id: 6, text: 'RUDUIRKE' },
+        { id: 6, text: 'RUNDVIRKE' },
         
       ], 
       suppliers: [
@@ -82,7 +82,7 @@ const modalContent = {
   Bois_MDF: {
     backgroundColor: "#e6edeb",
     description:
-      "Connu pour être l'un des plus importants fournisseurs de matériaux de construction en Tunisie et des grands chantiers dans la zone du Sahel et sur tout le territoire tunisien, cogeb offre un large choix de Fer avec toutes les formes de barre (8, 10; 12 et 14) ainsi que son nouveau produit sur le marché le fer marchand.Des briques de qualité supérieure Du ciment en grande quantité nécessaire pour les chantiers et la même la construction individuelle Ainsi que le chou blanc .",
+      "Le MDF (Medium Density Fiberboard) est un panneau de fibres de bois compressées, apprécié pour sa surface lisse et homogène, parfaite pour la peinture et le placage. Solide et facile à travailler, il est souvent utilisé en ameublement et agencement intérieur. Le MDF se découpe et se sculpte sans éclat, permettant des finitions soignées. Il est disponible en version standard ou hydrofuge, résistant mieux à l’humidité, pour des applications dans des pièces humides comme les cuisines et salles de bains. C’est un choix économique et polyvalent pour des projets de qualité.",
       buttons: [
         { id: 1, text: 'BRUTTE' },
         { id: 2, text: 'HYDROFUGE' },
@@ -110,7 +110,7 @@ const modalContent = {
       buttons: [
         { id: 1, text: 'HETRE' },
         { id: 2, text: 'FRENE' },
-        { id: 3, text: 'ACAJOU SAPOLLI' },
+        { id: 3, text: 'ACAJOU SAPELLI' },
         { id: 4, text: 'CHENE' },
        
         
