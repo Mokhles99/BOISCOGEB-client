@@ -7,6 +7,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { addToCarttwo } from '../actions/carttwo.actions'; 
 import { MdOutlineShoppingCart } from "react-icons/md"
+import { useTranslation } from "react-i18next";
+
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1400 },
@@ -47,6 +49,8 @@ const CustomRightArrow = ({ onClick }) => {
 };
 
 const Latest_property = () => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
   const [category, setCategory] = useState('Premium');
@@ -103,17 +107,15 @@ const Latest_property = () => {
             fontFamily: "'Playfair Display', serif",
             letterSpacing: "0.3em",
             marginTop:"12rem"
-          }}>Les plus recommandés</h1>
+          }}>{t('recommended_products')}</h1>
           <h1 className="lg:text-4xl text-xl font-medium capitalize py-3" style={{
             fontFamily: "'Playfair Display', serif",
           }}>
-            Produits Premium
-          </h1>
+{t('premium_products')}          </h1>
           <p className="text-[#808080] lg:text-base text-sm lg:w-3/5" style={{
             fontFamily: "'Playfair Display', serif",
           }}>
-            Découvrez notre sélection de produits premium, soigneusement choisis pour leur qualité exceptionnelle
-          </p>
+{t('discover_premium')}           </p>
         </div>
       </div>
 
@@ -133,56 +135,13 @@ const Latest_property = () => {
           customRightArrow={<CustomRightArrow />}
         >
           {filteredProducts && filteredProducts.map((product) => (
-            // <div key={product._id} className="shadow-lg rounded-3xl">
-     
-            //   {/* <div className="relative h-80 w-full rounded-3xl">
-            //     <img
-            //       src={product.files[0]?.url}
-            //       alt={product.name}
-            //       className="rounded-t-3xl h-full w-full object-cover"
-            //     />
-            //     {product.categorie === 'Premium' && (
-            //       <button className="px-6 py-2 flex gap-x-2 items-center text-[#119bff] bg-[#d7eeff] rounded-full absolute bottom-10 left-10">
-            //         <FaStar />
-            //         Premium
-            //       </button>
-            //     )}
-            //   </div> */}
-            //   <div className="bg-gray-190 p-4 rounded-3xl">
-            //     <span className="flex flex-col gap-y-1 py-4">
-            //     {product.categorie === 'Premium' && (
-            //       <button className="px-6 py-2 flex gap-x-2 items-center text-[#119bff] bg-[#d7eeff] rounded-full absolute top-15 right-5 ">
-            //         <FaStar />
-            //       Premium
-            //       </button>
-            //        )}
-            //       <p className="text-2xl font-medium text-gray-700">{product.name}</p>
-            //       <p className="text-lg font-medium text-gray-700">{product.description}</p>
-                
-            //       <button 
-            //         onClick={() => handleAddToCart(product._id)} 
-            //         className="mt-3 py-2 bg-[#576D80] text-white rounded-full hover:bg-blue-700"
-            //         style={{ 
-            //           display: 'flex', 
-            //           alignItems: 'center', 
-            //           justifyContent: 'center', 
-            //           textAlign: 'center', 
-            //           margin: '0 auto', 
-            //           width: '30%' 
-            //         }}
-            //       >
-            //         Ajouter au <MdOutlineShoppingCart style={{ marginLeft: '8px' }} />
-            //       </button>
-            //     </span>
-            //   </div>
-            // </div>
-
+    
             <div key={product._id} className="shadow-lg rounded-3xl bg-white">
   <div className="bg-gray-190 p-4 rounded-3xl relative">
     {product.categorie === 'Premium' && (
    <button className="px-3 py-1 flex gap-x-1 items-center text-xs text-[#119bff] bg-[#d7eeff] rounded-full absolute top-4 right-5 shadow-md">
    <FaStar className="text-sm" />
-   Premium
+   {t('Premium')} 
  </button>
  
     )}
@@ -201,7 +160,7 @@ const Latest_property = () => {
           width: '30%',
         }}
       >
-        Ajouter au <MdOutlineShoppingCart style={{ marginLeft: '8px' }} />
+        {t('add_to_cart')} <MdOutlineShoppingCart style={{ marginLeft: '8px' }} />
       </button>
     </span>
   </div>
@@ -209,33 +168,6 @@ const Latest_property = () => {
 
           ))}
         </Carousel>
-
-        {/* <div className="sm:hidden block ">
-          {filteredProducts && filteredProducts.map((product) => (
-            <div className='pt-8' key={product._id}>
-              <div className="relative h-80 sm:w-80">
-                <img
-                  src={product.files[0].url}
-                  alt={product.name}
-                  className="rounded-3xl h-full w-full object-cover"
-                />
-                <button className={`px-6 py-2 flex gap-x-2 items-center text-[#119bff] bg-[#d7eeff] rounded-full absolute bottom-10 left-10`}>
-                  <FaStar />
-                  Premium
-                </button>
-              </div>
-              <span className="flex flex-col gap-y-1 py-4">
-                <p className="text-2xl font-medium">{product.name}</p>
-                <p className="text-lg font-medium">{product.description}</p>
-              </span>
-            </div>
-          ))}
-          <div className="flex justify-center pt-12">
-            <button className="text-[#001F75] rounded-full border border-[#001F75] px-6 py-2 focus:bg-[#001F75] focus:text-white">
-              View more products 
-            </button>
-          </div>
-        </div> */}
       </section>
     </div>
   );

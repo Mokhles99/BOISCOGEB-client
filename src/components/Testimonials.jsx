@@ -1,8 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useTranslation } from 'react-i18next'; // Importation de useTranslation
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 
 const Testimonials = () => {
+  const { t } = useTranslation(); // Initialisation de la fonction de traduction
+
   return (
     <main className="container mx-auto px-3 lg:flex justify-between pt-20" id="temoi">
       <div className="lg:w-1/3 flex flex-col">
@@ -10,20 +13,17 @@ const Testimonials = () => {
               fontFamily: "'Playfair Display', serif",
               letterSpacing: "0.3em",
             }}>
-          Témoignages
+          {t('testimonials')}
         </p>
         <h1 className="lg:text-2xl text-3xl font-medium capitalize py-3" style={{
               fontFamily: "'Playfair Display', serif",
-             
             }}>
-  Regardez ce que nos clients disent !
-  </h1>
+          {t('see_what_our_clients_say')}
+        </h1>
         <p className="text-[#a5a5a5] text-sm" style={{
               fontFamily: "'Playfair Display', serif",
-             
             }}>
-          Nos clients apprécient la qualité exceptionnelle de nos produits et services.
-
+          {t('client_appreciation')}
         </p>
 
         {/* <div className="lg:flex hidden gap-x-12 mt-16">
@@ -39,9 +39,8 @@ const Testimonials = () => {
         <FaQuoteLeft className="text-[#ffe999] text-3xl" />
         <p className="font-medium pt-2 pb-8" style={{
               fontFamily: "'Playfair Display', serif",
-             
             }}>
-        Extrêmement satisfaits des services de COGEB Groupe, dont l'expertise et le professionnalisme ont dépassé toutes nos attentes
+          {t('testimonial_text')}
         </p>
         <div className="border-t border-[#d4d4d4] flex items-center py-4">
           {/* <img
@@ -50,7 +49,7 @@ const Testimonials = () => {
             className="rounded-full h-12 w-12 object-cover"
           /> */}
           <span className="lg:flex items-center justify-between w-full gap-x-4 font-medium pl-3">
-            <p>Client Cogeb</p>
+            <p>{t('client')}</p>
             <div>
               {[...Array(5)].map((_, index) => (
                 <button

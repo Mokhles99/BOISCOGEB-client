@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next'; // Importation de useTranslation
 import FormDialog from './FormDialog'; // Assurez-vous que le chemin est correct
 
 const Become_an_agent = () => {
+  const { t } = useTranslation(); // Initialisation de la fonction de traduction
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -22,12 +24,12 @@ const Become_an_agent = () => {
                 fontFamily: "'Playfair Display', serif",
                 letterSpacing: "0.1em",
               }}>
-                Client COGEB.
+                {t('client_cogeb')}
               </h1>
               <p className="text-white text-sm lg:w-11/12" style={{
                 fontFamily: "'Playfair Display', serif",
               }}>
-                Restez informé de nos dernières nouveautés et offres exclusives en vous inscrivant à notre newsletter.
+                {t('stay_informed')}
               </p>
             </span>
             <button 
@@ -35,7 +37,7 @@ const Become_an_agent = () => {
               className="bg-white text-[#001F75] px-8 py-3 rounded-full lg:mt-0 mt-8 lg:ml-4" 
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Inscrivez-vous maintenant
+              {t('sign_up_now')}
             </button>
           </div>
         </div>

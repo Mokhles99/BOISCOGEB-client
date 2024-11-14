@@ -1,0 +1,180 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "address":"COGEB, Avenue Hedi Nouira 4003 - Sousse - Tunisie"
+
+  },
+  "CartIcon": {
+    "cartTitle": "Cart",
+    "requestQuote": "Request Quote",
+    "userInfo": "User Information",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message",
+    "send": "Send",
+    "success": {
+      "title": "Sent!",
+      "message": "Your quote request has been successfully sent."
+    },
+    "errors": {
+      "nameRequired": "Name required",
+      "surnameRequired": "Surname required",
+      "emailRequired": "Email required",
+      "invalidEmail": "Invalid email format: ****@****",
+      "phoneRequired": "Phone number required",
+      "invalidPhone": "Phone number should contain 8 digits",
+      "messageRequired": "Message required"
+    }
+  },
+"Real_estate": {
+  "group": "Our Partners"
+},
+"Who_are_we": {
+  "about": "ABOUT US",
+  "title": "Who Are We?",
+  "description": "Founded in 1980, COGEB specializes in the sale of wood and derivatives. A leader in this field, it offers various products that meet the needs of both professionals and individuals.",
+  "excellence1": "COGEB excels in wood sales, offering a wide range of derivative products. Combining quality and diversity, it partners with recognized brands to provide tailored solutions to all needs.",
+  "excellence2": "With its specialized showrooms and large storage capacity, COGEB offers a unique experience. Its skilled team guarantees a personalized service that meets the specific needs of every construction project."
+},
+  "catalogTitle": "OUR CATALOGS",
+  "chooseDesires": "Choose your desires",
+  "aboutWood": "About this wood:",
+  "Bois_Blanc": "WHITE WOOD",
+  "Bois_Rouge": "RED WOOD",
+  "Bois_MDF": "MDF WOOD",
+  "Bois_Dur": "HARD WOOD",
+  "descriptionBoisBlanc": "White wood is light, durable, and suited for various constructions...",
+  "descriptionBoisRouge": "Red wood is known for its resilience and aesthetic appeal...",
+  "descriptionBoisMDF": "MDF is a composite material ideal for interiors...",
+  "descriptionBoisDur": "Hardwood is dense and perfect for sturdy, durable furniture...",
+  
+
+
+
+
+
+
+"recommended_products": "Recommended Products",
+"premium_products": "Premium Products",
+"discover_premium": "Discover our selection of premium products, carefully chosen for their exceptional quality",
+"premium": "Premium",
+"add_to_cart": "Add to Cart"
+,
+
+  "our_services": "Our Services",
+  "service_description": "We offer a range of personalized services to meet your specific needs, ensuring exceptional quality and satisfaction.",
+  "sales": "Sales",
+  "sales_description": "COGEB offers a wide range of construction products, including wood and sanitary items, to meet all needs.",
+  "customer_support": "Customer Support",
+  "customer_support_description": "Our experts guide you in selecting the products suited to your projects, taking into account your needs and budget.",
+  "transport": "Transport",
+  "transport_description": "COGEB ensures reliable transport so your products arrive on time and in good condition.",
+
+
+  "testimonials": "Testimonials",
+  "see_what_our_clients_say": "See what our clients say!",
+  "client_appreciation": "Our clients appreciate the exceptional quality of our products and services.",
+  "testimonial_text": "Extremely satisfied with COGEB Group's services, whose expertise and professionalism exceeded all our expectations.",
+  "client": "COGEB Client",
+
+
+
+  "client_cogeb": "COGEB Client",
+  "stay_informed": "Stay informed about our latest updates and exclusive offers by signing up for our newsletter.",
+  "sign_up_now": "Sign up now",
+
+
+  "fill_all_fields": "Please fill in all fields.",
+  "success": "Success!",
+  "form_submitted": "Form submitted successfully!",
+  "error": "Error!",
+  "form_error": "Error while submitting the form.",
+  "ok": "OK",
+  "email_address": "Email Address",
+  "full_name": "Full Name",
+  "message": "Message",
+  "send": "Send",
+  "contact_us": "Contact Us",
+  
+
+
+
+  "company_address": "COGEB, Avenue Hedi Nouira 4003 - Sousse - Tunisia",
+  "information": "Information",
+  "home": "Home",
+  "about": "About Us",
+  "products": "Products",
+  "services": "Services",
+  "useful_links": "Useful Links",
+  "quote": "Quote",
+  "privacy_policy": "Privacy Policy",
+  "support": "Support",
+  "find_us": "Find Us",
+  "all_rights_reserved": "All rights reserved",
+  "terms_of_use": "Terms of Use",
+
+  "Devis": {
+    "title": "Custom Quote Calculation",
+    "description": "At COGEB, we understand that every project is unique and requires a personalized approach. That's why we offer a custom quote calculation service to precisely meet your needs. Whether you're an individual, a construction professional, or a contractor, we are here to provide you with detailed and accurate estimates. Our team of experts is available to guide you through the process of selecting materials, required quantities, and the most suitable options for your project. We guarantee competitive, transparent quotes, delivered promptly. Trust us to assist you in bringing your projects to life, regardless of their size or complexity."
+  },
+  "Confidentialite": {
+    "title": "Privacy Policy",
+    "description": "At COGEB, protecting your personal data is our top priority. We are committed to respecting your privacy and handling your information with the utmost care. Our privacy policy details how we collect, use, and protect the information you provide us. Whether you contact us for a quote, sign up for our newsletter, or make a purchase, rest assured that your data is secure. We use cutting-edge technologies to protect your information from unauthorized access, and we are committed to never selling, exchanging, or renting your personal data to third parties. Our privacy commitment is a promise we uphold at every stage of our relationship with you."
+  },
+  "Support": {
+    "title": "Support and Advice",
+    "description": "At COGEB, we believe that the success of your project relies on quality support. That's why we offer comprehensive support services designed to answer all your questions and provide you with the advice you need. Our support team consists of experienced professionals ready to assist you at every step of your project. Whether you need help selecting the most suitable materials, technical information, or advice on best practices, we are here to guide you. We are committed to providing fast, efficient, and personalized support to help you overcome any challenges you may face. At COGEB, your satisfaction is our priority, and we strive to ensure the success of your projects."
+  },
+
+
+  "products": "Our Products",
+  "productSelection": "Product Selection",
+  "productDescription": "Discover our wide range of products, carefully selected to meet all your needs",
+  "all": "All",
+  "previous": "Previous",
+  "next": "Next",
+  "addToCart": "Add to ",
+  "page": "Page",
+  "of": "of",
+  "product": "Product",
+  "details": "Details",
+
+
+
+
+  "cart": "Your Cart",
+  "reference": "Reference",
+  "quote": "Get a Quote",
+  "userInfo": "User Information",
+  "fields": {
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message"
+  },
+  "errors": {
+    "nameRequired": "Name is required",
+    "surnameRequired": "Surname is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email",
+    "phoneRequired": "Phone number is required",
+    "phoneInvalid": "Please enter a valid 8-digit phone number",
+    "messageRequired": "Message is required"
+  },
+  "success": {
+    "title": "Success!",
+    "text": "Your quote request has been sent successfully."
+  },
+  "send": "Send"
+
+
+
+  }
+  

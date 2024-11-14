@@ -1,9 +1,11 @@
-import React , { useEffect }from "react";
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Marquee from "react-fast-marquee";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCarousels } from "../actions/carousel.actions";
+
 const responsive = {
   module: {
     breakpoint: { max: 4000, min: 0 },
@@ -12,42 +14,20 @@ const responsive = {
 };
 
 const Real_estate = () => {
-
+  const { t } = useTranslation(); // Initialize translation function
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllCarousels());
-    // const timer = setTimeout(() => {
-    //   const produitsSection = document.getElementById("produits");
-    //   if (produitsSection) {
-    //     produitsSection.scrollIntoView({ behavior: "smooth" });
-    //   }
-    // }, 10000); // 4000 millisecondes = 4 secondes
-
-    // return () => clearTimeout(timer); // Nettoyage du timer lors du démontage
   }, [dispatch]);
-  
-  useEffect(() => {
-		const elementIds = ["hero", "propos", "produits", "service", "temoi"]
-		const scrollToElements = async () => {
-			for (const id of elementIds) {
-				const doc = document.getElementById(id)
-				doc.scrollIntoView({ behavior: "smooth" })
-				await new Promise(resolve => setTimeout(resolve, 3000))
-			}
-		}
-		scrollToElements()
-	}, [])
-  
-  const images = useSelector((state) => state.carousel.carousels)
-  
+
+  const images = useSelector((state) => state.carousel.carousels);
   const imagesTwo = [
     "/assets/carousel1.JPG",
     "/assets/carousel2.JPG",
     "/assets/carousel3.jpg",
     "/assets/carouselbois.JPG",
   ];
-
   const imagesToDisplay = images.length > 0 ? images : imagesTwo;
 
   const CustomDot = ({ onClick, active }) => {
@@ -74,46 +54,20 @@ const Real_estate = () => {
           transitionDuration={500}
           className="absolute inset-0 w-full h-full"
         >
-          {/* {images.map((img, index) => (
+          {imagesToDisplay.map((img, index) => (
             <div
               key={index}
               className="w-full h-screen bg-cover bg-center"
-              style={{ backgroundImage: `url(${img})` }}
-            ></div> */}
-             {/* {images.map((img, index) => (
-  <div
-    key={index}
-    className="w-full h-screen bg-cover bg-center"
-    style={{ backgroundImage: `url(${img.files[0].url})` }}
-  ></div>
-))} */}
-
-{imagesToDisplay.map((img, index) => (
-    <div
-      key={index}
-      className="w-full h-screen bg-cover bg-center"
-      style={{ 
-        backgroundImage: `url(${
-          img.files ? img.files[0].url : img
-        })` 
-      }}
-    ></div>   ))}
+              style={{
+                backgroundImage: `url(${img.files ? img.files[0].url : img})`,
+              }}
+            ></div>
+          ))}
         </Carousel>
-        {/* <div className="absolute inset-0 flex items-center justify-center">
-          <h1
-            className="text-white text-4xl md:text-6xl font-bold text-center"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              letterSpacing: "0.1em",
-            }}
-          >
-            L'excellence dans <br /> chaque goutte d'eau.
-          </h1>
-        </div> */}
       </div>
+
       <div className="container mx-auto px-3 py-16">
         <span className="lg:flex items-end gap-x-60 lg:text-left text-center">
-          {/* <button className="lg:block hidden bg-gradient-to-r from-[#7992d76b] to-[#eff9f9] rounded-full h-24 w-24 cursor-auto"></button> */}
           <p
             className="text-[#a5a5a5]"
             style={{
@@ -121,13 +75,12 @@ const Real_estate = () => {
               letterSpacing: "0.1em",
             }}
           >
-            NOS PARTENAIRES
+            {t('Real_estate.group')} {/* Use translation here */}
           </p>
         </span>
 
         <div className="py-24">
           <Marquee>
-         
             <img src="/assets/four1boisblanc.png" alt="" className="h-24 mr-32" />
             <img src="/assets/four2boisblanc.png" alt="" className="w-40 h-40 mr-32" />
             <img src="/assets/four3boisblanc.png" alt="" className="h-24 mr-32" />

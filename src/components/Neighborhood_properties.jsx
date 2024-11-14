@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import * as Images from '../../public/index';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 const productTypeMapping = {
   'Bois_Blanc': ['Arkhangesk','StoraEnso & Khumo','Ilim'],
@@ -323,118 +324,12 @@ const Neighborhood_properties = ({ products }) => {
       <div ref={productsRef}>
         <LatestPropertyWithPagination 
           products={filteredProducts} 
-          activeFamille={activeFamille} // Passez la famille sélectionnée comme prop
+          activeFamille={activeFamille} 
           activeTypes={activeTypes} 
-          onFilterByType={handleFilterByType}  // Passez le gestionnaire de filtrage par type
-          onFilterByChoix={handleFilterByChoix} // Passez le gestionnaire de filtrage par choix
+          onFilterByType={handleFilterByType}  
+          onFilterByChoix={handleFilterByChoix} 
         />
       </div>
-
-      {/* <Modal open={openModal} onClose={handleCloseModal}>
-        <Box 
-          sx={{
-            // backgroundColor: modalData.backgroundColor,
-            backgroundColor:"white",
-            p: 2,
-            borderRadius: 5,
-            maxWidth: '80%',
-            mx: 'auto',
-            mt: '4%',
-            maxHeight: '95vh',     // Limite la hauteur du modal
-            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)'  // Ajoute une ombre pour le modal
-          }}
-        >
-                            <Typography
-                      variant="h6"
-                      component="h2"
-                      sx={{ fontWeight: 'bold' }}
-                    >
-  A Propos ce bois :
-</Typography>
-<Typography 
-  variant="body1" 
-  component="p"
-  sx={{
-    fontSize: {
-      xs: '12px',  // Small screens
-      sm: '12px',  // Small to medium screens
-      md: '12px',  // Medium screens
-      lg: '12px',  // Large screens
-      xl: '12px',  // Extra large screens
-    },
-  }}
->
-  {modalData.description}
-</Typography>
-          <Typography
-  variant="h6"
-  component="h2"
-  sx={{ fontWeight: 'bold'}}
->
-<Box
-  mt={0.3}
-  display="grid"
-  gridTemplateColumns="repeat(auto-fit, minmax(70px, 1fr))"  // Adjusted minmax values for smaller buttons
- 
->
-  {modalData.buttons?.map((button) => (
-    <button
-      key={button.id}
-      style={{
-        padding: "4px 8px",   // Smaller padding for minimized buttons
-        border: "1px solid #ccc",
-        backgroundColor: "#9d7153",
-        color:"white",
-        cursor: "pointer",
-        textAlign: "center",
-        borderRadius: "16px",  // Reduced border radius
-        fontSize: isSmallScreen ? "35%" : "50%", // Reduced font size for button text
-        width: "100%",  // Make the button take full width of its grid cell
-      }}
-    >
-      {button.text}
-    </button>
-  ))}
-</Box>
-
-<Box mt={0.3} mb={0.5} display="grid" gridTemplateColumns="repeat(auto-fit, minmax(50px, 1fr))" >
-  {modalData.supplierstwo?.map((suppliertwo, index) => (
-    <img
-      key={index}
-      src={suppliertwo}
-      alt={`Supplier ${index + 1}`}
-      className="rounded-lg"
-      style={{ width: "100%", maxWidth:"400px", height: "260px", objectFit: "contain"  }} 
-     
-    />
-  ))}
-</Box>
-
-
-  Nos Fournisseurs :
-</Typography>
-<Box display="grid" gridTemplateColumns="repeat(auto-fit, minmax(50px, 1fr))">
-  {modalData.suppliers?.map((supplier, index) => (
-    <img 
-      key={index} 
-      src={supplier} 
-      alt={`Supplier ${index + 1}`} 
-      style={{
-        width: "100%",
-        height: "60px",  // Height of each logo
-        objectFit: "contain",
-        margin: "5px",  // Adds some spacing between logos
-        maxWidth: "100%",
-        flexShrink: 0,  // Ensures the images do not shrink too much
-        borderRadius: "5px"  // Optional: Add rounded corners
-      }} 
-    />
-  ))}
-</Box>
-
-
-        </Box>
-      </Modal> */}
       <Modal open={openModal} onClose={handleCloseModal}>
   <Box 
     sx={{
