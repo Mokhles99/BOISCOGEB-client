@@ -8,30 +8,7 @@
     "address":"COGEB, Avenue Hedi Nouira 4003 - Sousse - Tunisie"
 
   },
-  "CartIcon": {
-    "cartTitle": "Cart",
-    "requestQuote": "Request Quote",
-    "userInfo": "User Information",
-    "name": "Name",
-    "surname": "Surname",
-    "email": "Email",
-    "phone": "Phone Number",
-    "message": "Message",
-    "send": "Send",
-    "success": {
-      "title": "Sent!",
-      "message": "Your quote request has been successfully sent."
-    },
-    "errors": {
-      "nameRequired": "Name required",
-      "surnameRequired": "Surname required",
-      "emailRequired": "Email required",
-      "invalidEmail": "Invalid email format: ****@****",
-      "phoneRequired": "Phone number required",
-      "invalidPhone": "Phone number should contain 8 digits",
-      "messageRequired": "Message required"
-    }
-  },
+  
 "Real_estate": {
   "group": "Our Partners"
 },
@@ -148,31 +125,126 @@
 
 
 
-  "cart": "Your Cart",
-  "reference": "Reference",
-  "quote": "Get a Quote",
-  "userInfo": "User Information",
-  "fields": {
-    "name": "Name",
-    "surname": "Surname",
-    "email": "Email",
-    "phone": "Phone Number",
-    "message": "Message"
+
+
+  "product": {
+    "header": {
+      "title": "Wood Products"
+    },
+    "Bois_Blanc": {
+      "title": "White Wood",
+      "description": "White wood is a softwood sourced from Scandinavian countries (Finland, Sweden, Austria, and Russia). This species can be used in framing, interior joinery, packaging, and also in laminated wood production.",
+      "buttons": {
+        "1": "ARKHANGESK",
+        "2": "STORA ENSO",
+        "3": "ILIM"
+      }
+    },
+    "Bois_Rouge": {
+      "title": "Red Wood",
+      "description": "Red wood is a softwood primarily sourced from Sweden, Finland, Russia, and its rich coastal forests. It is commonly used in framing and cladding. Cogeb offers a well-known quality in Tunisia.",
+      "buttons": {
+        "1": "FORTUNA",
+        "2": "STORA ENSO",
+        "3": "KUHMO",
+        "4": "TAIGA",
+        "5": "ARKHAN GESLK",
+        "6": "VIDA",
+        "7": "SATERS",
+        "8": "MOELVEN",
+        "9": "RUNDVIRKE"
+      }
+    },
+    "Bois_MDF": {
+      "title": "MDF Wood",
+      "description": "MDF (Medium Density Fiberboard) is a panel made of compressed wood fibers, valued for its smooth and even surface, perfect for painting and veneering.",
+      "buttons": {
+        "1": "BRUTTE",
+        "2": "HYDROFUGE",
+        "3": "MELAMINE",
+        "4": "EDGE BAND"
+      }
+    },
+    "Bois_Dur": {
+      "title": "Hardwood",
+      "description": "Hardwood comes from deciduous trees like oak, beech, and ash. It stands out due to its higher density and durability compared to softwood. It is especially valued for its mechanical resistance and quality.",
+      "buttons": {
+        "1": "BEECH",
+        "2": "ASH",
+        "3": "SAPELE MAHOGANY",
+        "4": "OAK"
+      }
+    }
   },
-  "errors": {
-    "nameRequired": "Name is required",
-    "surnameRequired": "Surname is required",
-    "emailRequired": "Email is required",
-    "emailInvalid": "Please enter a valid email",
-    "phoneRequired": "Phone number is required",
-    "phoneInvalid": "Please enter a valid 8-digit phone number",
-    "messageRequired": "Message is required"
+
+
+  "catalogue": {
+    "title": "OUR CATALOGS",
+    "subtitle": "Choose Your Desires"
   },
-  "success": {
-    "title": "Success!",
-    "text": "Your quote request has been sent successfully."
+  "familles": {
+    "Bois_Blanc": "White Wood",
+    "Bois_Rouge": "Red Wood",
+    "Bois_MDF": "MDF Wood",
+    "Bois_Dur": "Hard Wood",
+    "Tous": "All Products"
   },
-  "send": "Send"
+  "modals": {
+    "title":"About this wood :",
+    "Fournisseurs":"Our Suppliers: ",
+    "Bois_Blanc": {
+      "title": "White Wood",
+      "description": "White wood is softwood supplied by Scandinavian countries (Finland, Sweden, or Europe Austria and Russia). This type of wood can be used in carpentry, interior joinery, packaging, and laminated wood manufacturing. Cogeb meets the demand of the Tunisian market by dedicating a significant volume of its imports to white wood.",
+      "suppliersTitle": "Our Suppliers:",
+      "buttons": ["ARKHAN GESLK", "STORA ENSO", "ILIM"]
+    },
+    "Bois_Rouge": {
+      "title": "Red Wood",
+      "description": "Red wood is a softwood mainly from Sweden, Finland, Russia and its rich (coastal) forests. Wood marketed in the field of framework and cladding. Thanks to this species, Cogeb is proud to offer you a quality well known in Tunisia. For this, Cogeb ensures to provide you with a stock always well-stocked with red wood in order to meet all your development needs with world-renowned suppliers."
+    },
+    "Bois_MDF": {
+      "title": "MDF Wood",
+      "description": "MDF (Medium Density Fiberboard) is a compressed wood fiberboard, appreciated for its smooth and homogeneous surface, perfect for painting and veneering. Strong and easy to work, it is often used in furniture and interior design. MDF can be cut and sculpted without chipping, allowing for neat finishes. It is available in standard or water-repellent versions, which are more resistant to humidity, for applications in humid rooms such as kitchens and bathrooms. It is an economical and versatile choice for quality projects."
+    },
+    "Bois_Dur": {
+      "title": "Hard Wood",
+      "description": "Hardwood comes from deciduous trees, such as oak, beech and ash. It is distinguished by its density and durability superior to softwood. Cogeb offers you a wide range of Hardwood, imported from Romania and France, known for its exceptional resistance. Beech, dense and durable, is prized by cabinetmakers and carpenters. Ash, famous for its mechanical resistance and whiteness, is one of the most beautiful species. White oak, stable and of incomparable quality, is ideal for interior carpentry. Cogeb provides you with a large stock of these species to meet your needs."
+    }
+  } ,
+
+
+
+  "cart": {
+    "title": "Cart",
+    "quoteButton": "Request Quote",
+    "userInfoTitle": "User Information",
+    "fields": {
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "message": "Message",
+      "submit":"Send"
+    },
+    "placeholders": {
+      "name": "Enter your name",
+      "surname": "Enter your surname",
+      "email": "Enter your email",
+      "phoneNumber": "Enter your phone number",
+      "message": "Enter your message"
+    },
+    "errors": {
+    "name": "Name is required",
+    "surname": "Surname is required",
+    "email": "Email is required",
+    "emailInvalid": "Invalid email: it must be in the form ****@****",
+    "phoneNumber": "Phone number is required",
+    "phoneNumberInvalid": "Phone number must contain 8 digits",
+    "message": "Message is required"
+  },
+    "successMessage": "Your quote request has been successfully sent.",
+    "successTitle": "Sent!"
+  }
 
 
 

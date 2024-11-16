@@ -7,30 +7,44 @@
     "testimonials": "Témoignages",
     "address":"COGEB, Avenue Hedi Nouira 4003 - Sousse - Tunisie"
   },
-"CartIcon": {
-    "cartTitle": "Panier",
-    "requestQuote": "Devis",
-    "userInfo": "Informations utilisateur",
-    "name": "Nom",
-    "surname": "Prénom",
-    "email": "Email",
-    "phone": "Numéro de téléphone",
-    "message": "Message",
-    "send": "Envoyer",
-    "success": {
-      "title": "Envoyé!",
-      "message": "Votre demande de devis a été envoyée avec succès."
+
+
+
+"cart": {
+    "title": "Panier",
+    "quoteButton": "Devis",
+    "userInfoTitle": "Informations utilisateur",
+    "fields": {
+      "name": "Nom",
+      "surname": "Prénom",
+      "email": "Email",
+      "phoneNumber": "Numéro de téléphone",
+      "message": "Message",
+      "submit":"Envoyé"
+    },
+    "placeholders": {
+      "name": "Entrez votre nom",
+      "surname": "Entrez votre prénom",
+      "email": "Entrez votre email",
+      "phoneNumber": "Entrez votre numéro de téléphone",
+      "message": "Entrez votre message"
     },
     "errors": {
-      "nameRequired": "Nom requis",
-      "surnameRequired": "Prénom requis",
-      "emailRequired": "Email requis",
-      "invalidEmail": "Email invalide : il faut la forme ****@****",
-      "phoneRequired": "Numéro de téléphone requis",
-      "invalidPhone": "Numéro de téléphone: il doit contenir 8 chiffres",
-      "messageRequired": "Message requis"
-    }
+    "name": "Nom requis",
+    "surname": "Prénom requis",
+    "email": "Email requis",
+    "emailInvalid": "Email invalide",
+    "phoneNumber": "Numéro de téléphone requis",
+    "phoneNumberInvalid": "Numéro de téléphone invalide",
+    "message": "Message requis"
   },
+    "successMessage": "Votre demande de devis a été envoyée avec succès.",
+    "successTitle": "Envoyé!"
+  },
+
+
+
+
 "Real_estate": {
   "group": "Nos Partenaires"
 },
@@ -153,31 +167,45 @@
 
 
 
-  "cart": "Votre Panier",
-  "reference": "Référence",
-  "quote": "Demander un Devis",
-  "userInfo": "Informations de l'utilisateur",
-  "fields": {
-    "name": "Nom",
-    "surname": "Prénom",
-    "email": "E-mail",
-    "phone": "Numéro de téléphone",
-    "message": "Message"
+
+
+
+  "catalogue": {
+    "title": "NOS CATALOGUES",
+    "subtitle": "Choisir vos désirs"
   },
-  "errors": {
-    "nameRequired": "Le nom est requis",
-    "surnameRequired": "Le prénom est requis",
-    "emailRequired": "L'email est requis",
-    "emailInvalid": "Veuillez entrer un email valide",
-    "phoneRequired": "Le numéro de téléphone est requis",
-    "phoneInvalid": "Veuillez entrer un numéro de téléphone valide à 8 chiffres",
-    "messageRequired": "Le message est requis"
+  "familles": {
+    "Bois_Blanc": "Bois Blanc",
+    "Bois_Rouge": "Bois Rouge",
+    "Bois_MDF": "Bois MDF",
+    "Bois_Dur": "Bois Dur",
+    "Tous": "Tous les produits"
   },
-  "success": {
-    "title": "Succès!",
-    "text": "Votre demande de devis a été envoyée avec succès."
-  },
-  "send": "Envoyer"
+
+
+  "modals": {
+    "title":"A Propos ce bois :",
+    "Fournisseurs":"Nos Fournisseurs :",
+
+    "Bois_Blanc": {
+      "title": "Bois Blanc",
+      "description": "Le bois Blanc est un bois tendre, fourni par les pays Scandinaves (Finlande, Suède ou Europe Autriche et Russie). Cette essence peut être utilisée en charpente, en menuiserie intérieure, en emballage et aussi dans la fabrication de lamellé. Cogeb répond alors à la demande du marché Tunisien en dédiant un volume important de ses importations au bois blanc.",
+      "suppliersTitle": "Nos Fournisseurs :",
+      "buttons": ["ARKHAN GESLK", "STORA ENSO", "ILIM"]
+    },
+    "Bois_Rouge": {
+      "title": "Bois Rouge",
+      "description": "Le bois Rouge est un bois tendre provenant principalement de Suède, Finlande, Russie et de ses forêts riches (côtières). Bois commercialisé dans le domaine de la charpente et du bardage. Grâce à cette essence, Cogeb est fière de vous offrir une qualité bien connue en Tunisie.Pour cela, Cogeb veille à mettre à votre disposition un stock toujours bien portant de bois rouge afin de répondre à tous vos besoins d'aménagement avec des fournisseurs de renommée mondiale."
+    },
+    "Bois_MDF": {
+      "title": "Bois MDF",
+      "description": "Le MDF (Medium Density Fiberboard) est un panneau de fibres de bois compressées, apprécié pour sa surface lisse et homogène, parfaite pour la peinture et le placage. Solide et facile à travailler, il est souvent utilisé en ameublement et agencement intérieur. Le MDF se découpe et se sculpte sans éclat, permettant des finitions soignées. Il est disponible en version standard ou hydrofuge, résistant mieux à l’humidité, pour des applications dans des pièces humides comme les cuisines et salles de bains. C’est un choix économique et polyvalent pour des projets de qualité."
+    },
+    "Bois_Dur": {
+      "title": "Bois Dur",
+      "description": "Le bois Dur provient d'arbres à feuilles caduques, tels que le chêne, le hêtre et le frêne. Il se distingue par sa densité et sa durabilité supérieures au bois tendre. Cogeb vous propose une large gamme de bois Dur, importée de Roumanie et de France, reconnue pour sa résistance exceptionnelle. Le hêtre, dense et durable, est prisé par les ébénistes et menuisiers. Le frêne, célèbre pour sa résistance mécanique et sa blancheur, est une des essences les plus belles. Le chêne blanc, stable et de qualité incomparable, est idéal pour la menuiserie d'intérieur. Cogeb met à votre disposition un large stock de ces essences pour répondre à vos besoins."
+    }
+  }
 
   
 
